@@ -1,63 +1,39 @@
 
-<ion-view view-title="Signup" hide-back-button="false">
-	<ion-content>
-	
+<ion-view view-title="Signup" hide-back-button="true" hide-nav-bar="true">
+	<ion-content class="padding slides">
+	<!--I AM ABOUT TO USE THE LOGIN CODE PROTOTYPE HERE-->
+	<div style="padding-top: 5%">
+      <h3 style="font-weight: 100; color: white">Sign Up</h3>
+      <br>
+      <p>Name:</p>
+          <label class="item item-input">
+              <input type="text" placeholder="Name" ng-model="details.name">
+          </label><br>
+        <p>Email:</p>
+          <label class="item item-input">
+              <input type="email" placeholder="Email" ng-model="details.email">
+          </label><br>
+          <p>Telephone:</p>
+          <label class="item item-input">
+              <input type="text" placeholder="Telephone" ng-model="details.phone_number">
+          </label><br>
+          <p>Password:</p>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="details.password">
+          </label><br>
+      <p>Confirm Password:</p>
+          <label class="item item-input">
+              <input type="password" placeholder="Password again" ng-model="details.confirm_password">
+          </label>
+      </div>
+      <button class="button button-block" style="    border-bottom: 5px solid #907b06;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: #d4b50a;
+    color: #fff;" ng-click="next()">Next</button>
+      <br><br>
+      <p ng-click="login()" style="text-align: center;">Already have an account? <b>Login Now</b></p>
 		
-		
-		<div class="list">
-			<form name="myForm">
-			
-			<label class="item item-input item-floating-label">
-				<span class="input-label">Name</span>
-				<input type="text"  placeholder="Name" name="name_input" ng-model="details.name" required>
-				<span style="color:red" ng-show="myForm.name_input.$dirty && myForm.name_input.$invalid">
-					<span ng-show="myForm.name_input.$error.required">Name is required.</span>
-				</span>
-			</label>
-			
-			<label class="item item-input item-floating-label">
-				<span class="input-label">Email</span>
-				<input type="email"  placeholder="Email" name="email" ng-model="details.email" required>
-				<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-  <span ng-show="myForm.email.$error.required">Email is required.</span>
-  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
-  </span>
-			</label>
-			
-			<label class="item item-input item-floating-label">
-				<span class="input-label">Phone number</span>
-				<input type="tel"  placeholder="Phone number" name="tel" ng-model="details.phone_number" required>
-				<span style="color:red" ng-show="myForm.tel.$dirty && myForm.tel.$invalid">
-  					<span ng-show="myForm.tel.$error.required">Phone number is required.</span>
-  				</span>
-			</label>
-			
-			<label class="item item-input item-floating-label">
-				<span class="input-label">Password</span>
-				<input type="password" placeholder="Password" name="password" ng-model="details.password" required>
-				<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
-  					<span ng-show="myForm.password.$error.required">Password is required.</span>
-  				</span>
-			</label>
-			
-			<label class="item item-input item-floating-label">
-				<span class="input-label">Confirm Password</span>
-				<input type="password" placeholder="Confirm Password" name="password2"ng-model="details.confirm_password" required>
-				<span style="color:red" ng-show="myForm.password2.$dirty && myForm.password2.$invalid">
-  					<span ng-show="myForm.password2.$error.required">Password is required.</span>
-  				</span>
-			</label>
-				
-			</form>
-			<div class="row">
-				<div class="col text-center">
-					<button class="button button-positive " ng-click="next()" ng-disabled="myForm.$invalid">
-   						Next
-						<i class="icon-right ion-arrow-right-c"></i>
-					</button>
-				</div>
-			</div>
-			
-		</div>
 	</ion-content>
 </ion-view>

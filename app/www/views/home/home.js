@@ -1,6 +1,6 @@
 
 angular.module("App")
-.controller("HomeController", function ($scope, $state) {
+.controller("HomeController", function ($scope, $state, Auth) {
 	$scope.load_classrooms = function () {
 		$state.go("tabs.classrooms");
 	};
@@ -22,4 +22,9 @@ angular.module("App")
 	$scope.load_invite = function() {
 		$state.go("tabs.invite")
 	};
+	$scope.logout = function () {
+		Auth.logout();
+		$state.go('tour');
+	};
+	
 })

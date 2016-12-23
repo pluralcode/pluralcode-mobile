@@ -2,6 +2,11 @@ angular.module('App', ['ionic', 'ngVideo'])
 
 .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 	$stateProvider
+	.state('tour', {
+		url: '/tour',
+		templateUrl: 'views/tour/tour.html',
+		controller: 'tourController'
+	})
 	.state('signup1', {
 		url: '/signup',
 		templateUrl: 'views/signup/signup1.html',
@@ -23,11 +28,10 @@ angular.module('App', ['ionic', 'ngVideo'])
 		templateUrl: 'views/tabs/tabs.html',
 		onEnter: function($state, Auth){
         if(!Auth.isLoggedIn()){
-           $state.go('login');
-        }
-    }
 		
-	})
+            	$state.go('tour');
+        }
+	}})
 	.state('tabs.home', {
 		url: '/home',
 		views: {
@@ -154,11 +158,11 @@ angular.module('App', ['ionic', 'ngVideo'])
 
 .factory('Auth', function () {
    if (window.localStorage['session']) {
-      var _user = JSON.parse(window.localStorage['session']);
+      var _user = "user";
    }
    var setUser = function (session) {
       _user = session;
-      window.localStorage['session'] = JSON.stringify(_user);
+      window.localStorage['session'] = _user;
    }
 
    return {

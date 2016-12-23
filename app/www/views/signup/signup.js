@@ -1,5 +1,5 @@
 angular.module("App")
-.controller("SignUpController", function ($scope, $ionicLoading, $ionicPopup, $state, $http) {
+.controller("SignUpController", function ($scope, $ionicLoading, $ionicPopup, $state, $http, Auth) {
 	$scope.details = [
 		{name: ''},
 		{email: ''},
@@ -7,6 +7,10 @@ angular.module("App")
 		{password: ''},
 		{confirm_password: ''}
 	];
+	
+	$scope.login = function () {
+		$state.go('login');
+	};
 	
 	$scope.next = function () {
 		$ionicLoading.show({
@@ -44,7 +48,8 @@ angular.module("App")
 			};
 			if (data.error_code == 240) {
 				$ionicLoading.hide();
-				$state.go('signup2');
+				Auth.setUser();
+				$state.go("tabs.home");
 				console.log($scope.details.name);
 				console.log($scope.details.email);
 				console.log($scope.details.phone_number);
