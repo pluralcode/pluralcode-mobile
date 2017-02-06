@@ -1,0 +1,77 @@
+
+<ion-view view-title="Buy - Pluralcode" hide-back-button="false">
+
+
+
+ 
+<ion-content style="background: #fafafa">
+<div style="    background: #679dfd;
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+">
+
+  <h2 style="color: white">Buy rubbies</h2>
+  <h5 style="color: white"></h5>
+    
+  </div>
+<div style="margin-top: 0px; padding: 20px">
+  <div class="rubbiesholder" style="display: inline-block;"><img src="/images/rubbies.png"/></div> 
+  <div class="inputcontainer" style="display: inline-block;margin-left: 10px;font-weight: 700;font-size: 18px">
+    {{balance}}
+  </div> 
+</div>
+
+<div class="item item-text-wrap">
+  <p>
+    Use rubbies to submit project, enroll in courses, get your certificates and enjoy your learning experience
+  </p>
+  
+</div>
+<div>
+<center><br>
+  <p style="text-align: center;">How much rubbies would you like to buy?</p>
+  </center>
+
+</div>
+<div class="row">
+
+  <label class="item-input" style="background: transparent;border-bottom: transparent;border-bottom: 2px solid black;width: 60%;margin: 0 auto">
+      <input class="" type="text" placeholder="Enter Amount..." ng-model="details.amount" style="background: transparent;">               
+  </label>
+  <div style="    background: #679dfd;
+    padding-top: 140px !important;
+    padding: 8px !important;
+    width: 30%;
+    color: white;
+    font-weight: 700;
+    margin-top: 9px;
+    font-size: 18px;">
+  Cost: 
+  </div>
+</div>
+<br>
+<br>
+<center>
+<div class="item" style="background: #f7f7f7">
+  
+<img src="/images/cards.jpg" width="60%" />  
+<br><br>
+  <input type="tel" placeholder="Card Pin" style="width: 100%">
+  <br>
+
+<button class="button" style="background:#679dfd;color: white;width: 80%;margin-top: 20px;margin: 0 auto">
+  Buy now using your airtime
+  </button>
+</div>
+
+  <h4>OR</h4>
+   <button class="button" style="background:rgb(254, 153, 0);color: white;width: 80%;margin-top: 20px;margin: 0 auto" ng-click="buy_creditcard()">
+  Pay using your debit card
+  </button>
+</center>
+
+</ion-content>
+</ion-view

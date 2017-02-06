@@ -1,34 +1,52 @@
+<ion-view view-title="Course" hide-back-button="false">
+	<ion-content style="background: #ebebeb">
 
-<ion-view view-title="View" hide-back-button="false">
-	<ion-content>
-		<div class="card" ng-repeat="lesson in lessons">
-			<div class="item" style="background-color: #679DFD;">
-				<h2 style=" color: #ffffff; font-weight:bold; ">{{lesson.content_title}}</h2>
-			</div>
-			<div class="item item-body">
-				{{lesson.course_text}}
-			</div>
-			<div class="item item-footer">
-				<div class="row no-padding">
-				<div class="col">
-					<a class="button button-small button-assertive button-clear" style="font-weight: bold " ng-click="load_video(lesson.videos)">
-						<i class = "icon-left ion-social-youtube-outline"></i>
-						Video
-						
-					</a>
-				</div>
-				<div class="col">
-					<a class="button button-small button-assertive button-clear text-right" style="font-weight: bold " ng-click="load_doc(lesson.documents)">
-						<i class = "icon-left ion-ios-book-outline"></i>
-						Read
-					</a>
-				</div>
-				</div>
-			
-			</div>
-		</div>
-		
-		
-		
+  <div class="row" style="background: white">
+    <div class="col col-20" style="background: #204056;border-radius: 2px; padding: 10px;padding-top: 20px; color: white;
+    font-size: 20px;height: 60px; font-weight: lighter; text-align: center;">
+      HTML
+    </div>
+    <div class="col col-50" style="padding: 10px; font-size: 18px;height: 60px;padding-top: 20px ">
+      {{course.course_detail.title}}
+
+      <br>
+
+    </div>
+        <div class="col col-30">
+
+<div style="width: 100%;background: #679dfd;color:white;padding:3px;padding-top:4px;text-align:center;font-weight:lighter;height: 60%;margin-top:10%;border-radius: 2px">
+<i class="fa fa-graduation-cap" aria-hidden="true"></i> Certificate
+  
+</div>
+                 </div>
+  </div>         
+             
+<Br>
+
+
+            <div style="width: 98%;margin: 0 auto;background:white;margin-bottom: 10px;height: 74px" ng-click="load_chapter(pointer.chapter_id)" ng-repeat="pointer in course.chapter_details">
+            <div class="row" style="height: 100% !important;padding: 0 0 0 0 !important">
+              <div class="col col-25" style="padding: 0 0 0 0 !important">
+                <div style="background: #679dfd;width: 100%;height: 100%;font-size:20px;color: white; text-align: center; padding-top:25%;border-radius: 2px">
+            CH{{pointer.chapter_id}}
+          </div>
+              </div>
+              <div class="col col-75">
+                 <div  style="padding-top: 15px"> 
+                   
+                   
+                  <h2 style="text-transform: capitalize !important; font-size: 18px;font-weight: lighter;">
+                    {{pointer.title}}
+                  </h2>
+
+                 </div>
+                
+              </div>
+            </div>
+          </div>            
+ 
+          
+          	         
+           
 	</ion-content>
 </ion-view>

@@ -1,39 +1,104 @@
-<ion-view view-title="Classrooms" hide-back-button="false">
-	<ion-content>
-		<div class="card" ng-repeat="course in courses">
-			<div class="item" style="background-color: #679DFD;">
-				<h2 style=" color: #ffffff; font-weight:bold; ">{{course.title}}</h2>
-			</div>
-			<div class="item item-body">
-				{{course.description}}
-			</div>
-			<div class="item item-footer">
-				<div class="row no-padding">
-				<div class="col">
-					<a class="button button-small button-assertive button-clear " style="font-weight: bold " ng-click="enroll({{course.course_id}})">
-						<i class = "icon-left ion-android-favorite-outline"></i>
-						Enroll
-					</a>
-				</div>
-				<div class="col">
-					<a class="button button-small button-assertive button-clear" style="font-weight: bold " ng-click="view({{course.course_id}})">
-						<i class = "icon-left ion-eye"></i>
-						View
-						
-					</a>
-				</div>
-				<div class="col">
-					<a class="button button-small button-assertive button-clear text-right">
-						<i class = "icon-left ion-forward"></i>
-						Share
-						
-					</a>
-				</div>
-				</div>
-			
-			</div>
-		</div>
+
+<ion-view view-title="Classroom - Pluralcode" hide-back-button="true">
+
+
+
+ 
+<ion-content style="background: #ebebeb">
+<br><br>
+<br><br>
+<br><br>
+
+	<div class="row my_darkpanel" style="margin-bottom: 0px;border:none;">
+	<div class = "row" style="margin-top: 10px;margin-bottom: 10px;font-weight: bold;">
+   <div class = "col col-10"><i class="icon ion-clock"></i> </div>
+   <div class = "col col-70">Lecture Name</div>
+   <div class = "col col-20" style="margin-top: 0px;padding-top: 0px"><span style="background: #679dfd;color: white;padding: 10px;border-radius: 4px">Resume</span></div>
+</div>
+	
 		
-		
-	</ion-content>
-</ion-view>
+	</div>
+
+
+
+<div class="card">
+   <div class="item item-divider">
+      <h2 style="font-size: 20px;font-weight: lighter;">ENROLLED COURSES</h2>
+
+   </div>
+
+   <div class="item-body" style="padding: 0px 0px 0px 0px !important" ng-click="view({{course.course_id}})" ng-repeat="course in enrolled_courses">
+
+
+	          <ion class="item item-thumbnail-left">
+         
+             <img src="/images/achievements.jpeg"/> 
+             <div class="row">
+                   <div class="col col-90"> 
+                   
+                   
+                  <h2 style="text-transform: capitalize !important; font-size: 18px;font-weight: 600">
+                      {{course.title}}
+                  </h2>
+                  <h5 style="text-transform: capitalize !important; font-size: 16px;font-weight: lighter;">
+                  Completed {{course.completed}}/5* chapters
+                  </h5>
+                  <h5 style="text-transform: capitalize !important; font-size: 15px;">
+                  </h5>
+                 </div>
+                 <div class="col col-10">
+                 <br>
+
+                   <i class="icon ion-chevron-right" style="float: right;
+    margin-top: 5px;"></i>
+                 </div>
+           </div>
+          </ion>
+
+</div>
+</div>
+
+
+<div class="card">
+   <div class="item item-divider">
+      <h2 style="font-size: 20px;font-weight: lighter;">MORE COURSES</h2>
+
+   </div>
+
+   <div class="item-body" style="padding: 0px 0px 0px 0px !important"  ng-repeat="course in more_courses" ng-click="enroll({{course.course_id}})">
+
+
+	          <ion class="item item-thumbnail-left">
+         
+             <img src="/images/achievements.jpeg"/> 
+             <div class="row">
+                   <div class="col col-90"> 
+                   
+                   
+                  <h2 style="text-transform: capitalize !important; font-size: 18px;font-weight: 600">
+                      {{course.title}}
+                  </h2>
+                  <h5 style="text-transform: capitalize !important; font-size: 16px;font-weight: lighter;">
+                  
+                  </h5>
+                  <h5 style="text-transform: capitalize !important; font-size: 15px;">
+                  </h5>
+                 </div>
+                 <div class="col col-10">
+                 <br>
+
+                   <i class="icon ion-chevron-right" style="float: right;
+    margin-top: 5px;"></i>
+                 </div>
+           </div>
+          </ion>
+
+</div>
+</div>
+<br>
+
+
+<center></center>
+
+</ion-content>
+</ion-view

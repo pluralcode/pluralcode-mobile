@@ -34,7 +34,8 @@ angular.module("App")
 					return;
 				}
 		};
-		$http.get("http://pluralcode.zigmatechconsult.com/public/home/register_student?fullname=" + $scope.details.name + "&password=" + $scope.details.password + "&email=" + $scope.details.email + "&phone=" + $scope.details.phone_number)
+
+		$http.get("http://apis.pluralcode.com.ng/public/home/register_student?fullname=" + $scope.details.name + "&password=" + $scope.details.password + "&email=" + $scope.details.email + "&phone=" + $scope.details.phone_number)
 			.success (function (data) {
 			if (data.error_code == 241) {
 				$ionicLoading.hide();
@@ -48,7 +49,8 @@ angular.module("App")
 			};
 			if (data.error_code == 240) {
 				$ionicLoading.hide();
-				Auth.setUser();
+				Auth.setData(data.student_detail.email, data.student_detail.fullname, data.student_detail.phone, data.student_detail.balance, $scope.details.password);
+				Auth.setUser("usersession");
 				$state.go("tabs.home");
 				console.log($scope.details.name);
 				console.log($scope.details.email);

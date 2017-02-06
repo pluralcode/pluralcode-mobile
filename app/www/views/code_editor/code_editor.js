@@ -1,6 +1,6 @@
 
 angular.module("App")
-.controller("CodeController", function ($scope) {
+.controller("CodeController", function ($scope, $state) {
 	$scope.data = {
     availableOptions: [
       {id: 'htmlmixed', name: 'HTML/CSS'},
@@ -16,7 +16,9 @@ angular.module("App")
       {id: 'text/x-mysql', name: 'SQL'},
       {id: 'text/x-swift', name: 'Swift'}
     ],
-    selectedOption: {id: 'htmlmixed', name: 'HTML/CSS'} //This sets the default value of the select in the ui
+    selectedOption: {id: 'htmlmixed', name: 'HTML/CSS'}, //This sets the default value of the select in the ui
+		
+	
     };
 	
 	function editor (lang) {
@@ -32,8 +34,14 @@ angular.module("App")
 	};
 	var cm = editor("python");
 	
+	$scope.savework = function() {
+		//$state.go("tabs.savecode");
+	};
+	
 	$scope.$watch('data.selectedOption', function () {
 		cm.setOption("mode", $scope.data.selectedOption.id);
 	});
+	
+	
 	
 })

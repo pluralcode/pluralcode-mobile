@@ -1,46 +1,60 @@
 
 <ion-view view-title="PluralCode" hide-back-button="true" >
 	
-<ion-content>
-	
+<ion-content style="background: #f1f1f1">
+
 	<div class="row">
-		
-			<div class="tile my_tile" ng-click="load_classrooms()">
-    			<div class="tile-content iconic" style="background-color: #679DFD; ">
-					<i class = "icon ion-search" style="color: #ffffff"></i>
-        			<span class="tile-label font_style" style="color: #ffffff">Find New Course</span>
+			<div class="tile my_tile" style="background: transparent;" ng-click="load_classrooms()">
+    			<div class="tile-content iconic">
+					
+					<i class = "icon ion-ios-bookmarks" style="color:#3c3c3c;"></i>
+					
+						 <div class="hmlabel">
+						 <div class="relat">
+						   <h5>Enter Classroom</h5>
+						 </div>
+						
+					</div>
+    			</div>
+			</div>			
+
+
+			<div class="tile my_tile" style="background: transparent !important;" ng-click="load_buyrubbies()">
+    			<div class="tile-content iconic" style="background-color: transparent; ">
+					<img src="/images/rub.png" class="tiler" /> <span style="display: inline-block;color: red" class="tiler2">{{balance}}</span>
+        				<div class="hmlabel">
+						 <div class="relat">
+						   <h5>Buy Rubbies  </h5>
+						 </div>
+						</div>
         			
     			</div>
 			</div>
-		
-		
-		
-			<div class="tile my_tile" ng-click="load_editor()">
-    			<div class="tile-content iconic" style="background-color: #679DFD;">
-					<i class = "icon ion-code" style="color: #ffffff"></i>
-        			<span class="tile-label font_style" style="color: #ffffff">Code Editor</span>
-    			</div>
-			</div>
-	
-	
 	</div>
 	<div class="row">
 	
 		
-			<div class="tile my_tile" ng-click="load_archive()">
-    			<div class="tile-content iconic" style="background-color:#679DFD;">
-					<i class = "icon ion-archive" style="color: #ffffff"></i>
-        			<span class="tile-label font_style" style="color: #ffffff">Offline Archives</span>
+			<div class="tile my_tile" style="background: transparent !important;" ng-click="load_editor()">
+    			<div class="tile-content iconic" style="background-color:transparent;">
+					<i class = "icon ion-code" style="color:#3c3c3c"></i>
+					  <div class="hmlabel">
+						 <div class="relat">
+						   <h5>Code Workspace </h5>
+						 </div>
+						</div>
     			</div>
 			</div>
 	
 		
 		
-			<div class="tile my_tile" ng-click="load_achievements()">
-    			<div class="tile-content iconic" style="background-color: #679DFD">
-					<i class = "icon ion-ribbon-a" style="color: #ffffff"></i>
-        			<span class="tile-label font_style" style="color: #ffffff">Achievements</span>
-        			<span class="tile-badge" style="color: #ffffff">0</span>
+			<div class="tile my_tile" style="background: transparent !important;" ng-click="load_live_mentor()">
+    			<div class="tile-content iconic" style="background-color: transparent;">
+					<i class = "icon ion-person" style="color:#3c3c3c"></i>
+        			<div class="hmlabel">
+						 <div class="relat">
+						   <h5>Talk to a mentor </h5>
+						 </div>
+						</div>
     			</div>
 				
 			</div>
@@ -48,44 +62,46 @@
 	
 	</div>	
 	
-	
-    
-		<div class="tile-small my_tile special_tile" ng-click="load_live_mentor()">
-				<div class="tile-content iconic" style="background-color: #FCC930;">
-					<i class = "icon ion-person-stalker" style="color: #ffffff"></i>
-        			<span class="tile-label font_style" style="color: #ffffff">Book a live mentor</span>
-    			</div>
-    		</div>
-	
-	
-	<div class="row">
-		
-		
-		
-			<div class="tile my_tile" ng-click="load_contact_us()">
-				<div class="tile-content iconic" style="background-color: #679DFD;">
-					<i class = "icon ion-paper-airplane" style="color: #ffffff"></i>
-        			<span class="tile-label font_style" style="color: #ffffff">Contact us</span>
-    			</div>
-    		</div>
-	
-	
-		
-			<div class="tile my_tile" ng-click="load_invite()">
-				<div class="tile-content iconic" style="background-color:#679DFD;">
-					<i class = "icon ion-plus" style="color: #ffffff"></i>
-        			<span class="tile-label font_style" style="color: #ffffff">Invite a friend</span>
-    			</div>
-    		</div>
+	<br>
+
+	<div class="row my_darkpanel" style="margin-bottom: 0px">
+	<div class = "row" style="margin-top: 10px;margin-bottom: 10px;font-size: 20px;font-weight: bold;">
+   <div class = "col col-10"><i class="icon ion-clock"></i> </div>
+   <div class = "col col-80">Lecture Name</div>
+   <div class = "col col-5" style="margin-top: 0px;padding-top: 0px"><i class="icon ion-chevron-right" style=" color: #3c3c3c;
+    font-size: 30px;
+    font-weight: 700;"></i></div>
+</div>
 	
 		
 	</div>
-	<div>
-							  <button class="button button-block button-assertive" ng-click="logout()" >
-								  Log out
-							  </button>
-							  </div>
+	<br>
+
+
+
+
+    	<div class="row" style="background: #fbc112;font-size: 20px">
+    	<div class="col col-20">
+					<i class="icon ion-android-person-add" style="float: center;font-size: 30px"></i></div>
+    	<div class="col col-80"><p style="margin-top: 4px;font-weight: 700;">Invite friends</p></div>
+    		
+    	</div>
+
+	
+	
+	<div class="row" style="background: #679dfd; font-size: 20px;margin-top: 8px" ng-click="load_profile()">
+		<div class="col col-20">
+					<i class="icon ion-android-person" style="float: center;font-size: 30px;margin-left: 3px"></i></div>
+    	<div class="col col-80"><p style="margin-top: 4px;font-weight: 700;">My Profile</p></div>
+	</div>
  
+	
+	<div class="row" style="background: #3c3c3c; font-size: 20px;margin-top: 8px;color: #d2d2d2" ng-click="logout()">
+		<div class="col col-20">
+					<i class="icon ion-log-out" style="float: center;font-size: 30px;margin-left: 3px"></i></div>
+    	<div class="col col-80"><p style="margin-top: 4px;font-weight: 700;">Logout</p></div>
+	</div>
+
 
 
 </ion-content>

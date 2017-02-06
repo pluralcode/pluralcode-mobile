@@ -34,6 +34,7 @@ angular.module('App', ['ionic', 'ngVideo'])
 	}})
 	.state('tabs.home', {
 		url: '/home',
+		cache: false,
 		views: {
 			'home-tab': {
 				templateUrl: 'views/home/home.html',
@@ -43,6 +44,7 @@ angular.module('App', ['ionic', 'ngVideo'])
 	})
 	.state('tabs.classrooms', {
 		url: '/classrooms',
+		cache: false,
 		views: {
 			'classrooms-tab': {
 				templateUrl: 'views/classrooms/classrooms.html',
@@ -52,18 +54,58 @@ angular.module('App', ['ionic', 'ngVideo'])
 	})
 	.state('tabs.notifications', {
 		url: '/notifications',
+		cache: false,
 		views: {
 			'notifications-tab': {
-				templateUrl: 'views/notifications/notifications.html',
+				templateUrl: 'views/community/community.html',
+				controller: 'CommunityController'
+			}
+		}
+	})
+	.state('tabs.post', {
+		url: '/post',
+		views: {
+			'notifications-tab': {
+				templateUrl: 'views/addquestion/addquestion.html',
+				controller: 'PostController'
+			}
+		}
+	})
+	.state('tabs.view_post', {
+		url: '/view_post/:post_id',
+		views: {
+			'notifications-tab': {
+				templateUrl: 'views/qna/qna.html',
+				controller: 'ViewPostController'
 			}
 		}
 	})
 	.state('tabs.view_course', {
-		url: '/view_course/:course_id:reg_no:password',
+		url: '/view_course/:course_id',
 		views: {
 			'classrooms-tab': {
 				templateUrl: 'views/view_course/view_course.html',
 				controller: "ViewCourseController"
+			}
+			
+		}
+	})
+	.state('tabs.view_chapter', {
+		url: '/view_chapter/:course_id/:chapter_id',
+		views: {
+			'classrooms-tab': {
+				templateUrl: 'views/viewchapter/viewchapter.html',
+				controller: "ViewChapterController"
+			}
+			
+		}
+	})
+	.state('tabs.enroll', {
+		url: '/enroll/:course_id',
+		views: {
+			'classrooms-tab': {
+				templateUrl: 'views/enrol/enrol.html',
+				controller: "EnrollController"
 			}
 			
 		}
@@ -79,16 +121,38 @@ angular.module('App', ['ionic', 'ngVideo'])
 		}
 	})
 	
+	.state('tabs.savecode', {
+		url: '/savecode',
+		views: {
+			'code-tab': {
+				templateUrl: 'views/code_editor/savecode.html',
+				//controller: 'CodeController'
+			}
+			
+		}
+	})
+	
 	.state('tabs.code_editor', {
 		url: '/code_editor',
 		views: {
-			'home-tab': {
+			'code-tab': {
 				templateUrl: 'views/code_editor/code_editor.html',
 				controller: 'CodeController'
 			}
 			
 		}
 	})
+	.state('tabs.workspace', {
+		url: '/workspace',
+		views: {
+			'code-tab': {
+				templateUrl: 'views/code_editor/workspace.html',
+				//controller: 'CodeController'
+			}
+			
+		}
+	})
+	
 	.state('tabs.offline_archives', {
 		url: '/offline_archives',
 		views: {
@@ -111,7 +175,7 @@ angular.module('App', ['ionic', 'ngVideo'])
 		url: '/live_mentor',
 		views: {
 			'home-tab': {
-				templateUrl: 'views/live_mentor/live_mentor.html',
+				templateUrl: 'views/viewmentor/viewmentor.html',
 			}
 			
 		}
@@ -133,6 +197,39 @@ angular.module('App', ['ionic', 'ngVideo'])
 			}
 			
 		}
+	})
+	.state('tabs.buy_rubbies', {
+		url: '/buy_rubbies',
+		views: {
+			'home-tab': {
+				templateUrl: 'views/buyrubbies/buyrubbies.html',
+				controller: 'BuyRubbiesController'
+			}
+			
+		}
+		
+	})
+	.state('tabs.profile', {
+		url: '/profile',
+		views: {
+			'home-tab': {
+				templateUrl: 'views/profile/profile.html',
+				controller: 'ProfileController'
+			}
+			
+		}
+		
+	})
+	.state('tabs.creditpaysuccess', {
+		url: '/paysuccess',
+		views: {
+			'home-tab': {
+				templateUrl: 'views/paysuccess/paysuccess.html',
+				//controller: 'ProfileController'
+			}
+			
+		}
+		
 	});
 	
 	$urlRouterProvider.otherwise('/tabs/home');
@@ -164,7 +261,7 @@ angular.module('App', ['ionic', 'ngVideo'])
       _user = session;
       window.localStorage['session'] = _user;
    }
-
+  
    return {
       setUser: setUser,
       isLoggedIn: function () {
@@ -173,14 +270,37 @@ angular.module('App', ['ionic', 'ngVideo'])
       getUser: function () {
          return _user;
       },
+	  setData: function (email, fullname, phone, balance, password) {
+		  window.localStorage['email'] = email;
+		  window.localStorage['fullname'] = fullname;
+		  window.localStorage['phone'] = phone;
+		  window.localStorage['balance'] = balance;
+		  window.localStorage['password'] = password;
+	  },
+	  getBalance: function () {
+		  return window.localStorage['balance'];
+	  },
+	  getFullname: function () {
+		  return window.localStorage['fullname'];
+	  },
+	  getEmail: function () {
+		  return window.localStorage['email'];
+	  },
+	  getPhone: function () {
+		  return window.localStorage['phone'];
+	  },
+	  getPassword: function () {
+		  return window.localStorage['password'];
+	  },
       logout: function () {
          window.localStorage.removeItem("session");
+         window.localStorage.removeItem("email");
+         window.localStorage.removeItem("fullname");
+         window.localStorage.removeItem("phone");
+         window.localStorage.removeItem("balance");
+         window.localStorage.removeItem("password");
          window.localStorage.removeItem("list_dependents");
          _user = null;
       }
    }
 })
-
-
-
-

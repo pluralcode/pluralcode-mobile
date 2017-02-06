@@ -5,7 +5,7 @@ angular.module("App")
 		$state.go("tabs.classrooms");
 	};
 	$scope.load_editor = function () {
-		$state.go("tabs.code_editor")
+		$state.go("tabs.workspace")
 	};
 	$scope.load_archive = function() {
 		$state.go("tabs.offline_archives")
@@ -22,9 +22,15 @@ angular.module("App")
 	$scope.load_invite = function() {
 		$state.go("tabs.invite")
 	};
-	$scope.logout = function () {
-		Auth.logout();
-		$state.go('tour');
+	$scope.load_buyrubbies = function() {
+		$state.go("tabs.buy_rubbies")
 	};
-	
+	$scope.load_profile = function() {
+		$state.go("tabs.profile")
+	};
+	$scope.logout = function() {
+		Auth.logout();
+		$state.go("login");
+	};
+	$scope.balance = Auth.getBalance();
 })

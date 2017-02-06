@@ -1,0 +1,109 @@
+
+<ion-view view-title="Enrol - Pluralcode" hide-back-button="false">
+
+<style type="text/css">
+  .timeline > li {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+  }
+.timeline h3{
+  font-weight: lighter;
+}
+  .timeline-content {
+    width: 95%;
+    float: right;
+    padding-left: 10px;
+    padding-top: 20px
+  }
+  .timeline-content:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border:solid 1px #163142;
+    background: #ebebeb;
+    position: absolute;
+    left: 12px;
+    top: 24px;
+    border-radius: 100%;
+  }
+}
+.timeline {
+  list-style: none;
+}
+.timeline > li {
+
+}
+
+</style>
+
+ 
+<ion-content style="background: #ebebeb">
+<div style="    background: #c11e1e;
+    width: 100%;
+    height: 40px;padding-top: 2px;
+    text-align: center;
+    color: white;
+">
+
+  <h4 style="color: white">Course details</h4>
+
+    
+  </div>
+  <Br>
+  <div style="padding: 10px">
+    
+  
+  <div class="row">
+    <div class="col col-25" style="background: #204056;border-radius: 2px; padding: 10px;padding-top: 20px; color: white;
+    font-size: 20px;height: 60px; font-weight: lighter; text-align: center;">
+      HTML
+    </div>
+    <div class="col col-75" style="padding-left: 9px; font-size: 18px;height: 60px; ">
+      <b>{{course.course_detail.title}}</b><br>
+      <em style="font-size: 14px">We recommend starting with this.</em>
+      <br>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="card">
+   <div class="item item-divider">
+      <h2 style="font-size: 20px;font-weight: lighter;">COURSE OUTCOMES</h2>
+
+   </div>
+
+   <div class="item item-body">
+
+
+ <div class="list" style="color: #5d5d5e;">
+
+{{course.course_detail.description}}
+
+</div>
+
+</div>
+</div>
+<ul class="timeline">
+  <li ng-repeat="chapter in course.chapter_details">
+    <div class="timeline-content">
+      <h3>{{chapter.title}}</h3>
+      <p>{{chapter.description}}</p>
+    </div>
+  </li>
+ 
+</ul>
+<br>
+
+
+<center>
+
+         <button class="button" ng-click="enroll()" style="width:50%;position: relative !important;margin-top: 10px; background: #c11e1e !important;background-image:none !important; text-align: center;border-radius: 4px;color: white; font-weight: lighter;font-size: 16px ">
+        <center><span style="text-align: center;">Enrol</span></center>
+      </button>
+</center>
+
+</ion-content>
+</ion-view

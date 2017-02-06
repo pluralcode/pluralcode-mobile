@@ -1,26 +1,25 @@
 
 angular.module("App")
-.controller("ViewCourseController", function ($scope, $state, $stateParams, $ionicLoading, $http) {
+.controller("ViewCourseController", function ($scope, $state, $stateParams, $ionicLoading, $http, Auth) {
 	$ionicLoading.show({
 			template: 'Loading course...',
 		});
 	$scope.course_id = $stateParams.course_id;
-	$scope.reg_no = $stateParams.reg_no;
-	$scope.password = $stateParams.password;
-	$http.get("http://pluralcode.zigmatechconsult.com/public/student/view_course/" + $scope.course_id + "?regno=" + $scope.reg_no + "&password=" + $scope.password)
+	$scope.email = Auth.getEmail();
+	$scope.password = Auth.getPassword();
+	$http.get("http://apis.pluralcode.com.ng/public/student/view_course/" + $scope.course_id + "?email=" + $scope.email + "&password=" + $scope.password)
 			.success( function (data) {
-			$scope.lessons = data;
+			$scope.course = data;
 			$ionicLoading.hide();
 	}).error( function (err) {
 			console.log("could not load lessons")
 	});
 	
-	$scope.load_doc = function (doc_url) {
-		console.log("I am reachable here in view_course");
-		$state.go("tabs.pdf_viewer", {doc_url:doc_url});
+	$scope.load_chapter = function (id) {
+		$state.go("tabs.view_chapter",{"course_id":$scope.course_id, "chapter_id": id});
 	};
-	$scope.load_video = function (video_url) {
-		$state.go("tabs.video_viewer", {video_url:video_url});
-	};
+	//$scope.load_video = function (video_url) {
+	//	$state.go("tabs.video_viewer", {video_url:video_url});
+	//};
 	
 });

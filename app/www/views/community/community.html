@@ -1,0 +1,41 @@
+
+<ion-view view-title="Community - Pluralcode" hide-back-button="true">
+
+
+
+ 
+<ion-content style="background: #fafafa">
+ <label class="item item-input" style="background: #e9e9e9">
+              <i class="icon ion-search" style="color:#696969; height: auto"></i>  <input class="" type="text" placeholder=" Search..." ng-model="data.username">               
+              <label class="item item-input item-select" style="color: black;width: 30%; background: #e9e9e9;border:2px solid #cac8c8">
+              	&nbsp; 
+                  <select style="padding: 0px 0px 0px 0px !important;right:40% !important; float: left; background: #e9e9e9">
+                      <option>My Posts</option>
+                      <option>Trending</option>
+                      <option >Hot</option>
+                      <option>Popular</option>
+                      <option>Designer</option>                      
+                  </select>
+              </label>
+          </label>
+<div class="addnew" style="    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: rgb(128, 128, 128);
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    font-size: 18px;
+    color: white;"><span style=" color:white; vertical-align: text-top;" ng-click="load_add_question()">Add Post</span>
+</div>
+<div class = "row" style="margin-top: 7px;margin-bottom: 0px;font-size: 20px;font-weight: lighter;" ng-click="view_post({{post.posts_id}})" ng-repeat="post in posts">
+   <div class = "col col-15"><div style="background: #679dfd;padding:8px; width: 40px; text-align:center;color: white;font-size: 14px">{{post.posted_by}}</div></div>
+   <div class = "col col-90">{{post.title}}<br><span style="font-size: 14px;color: #adadad">Last Modified: {{post.date_time_posted}}<br><span style="font-size: 22px;">{{post.num_of_comments}} </span><i style="font-size: 22px" class="icon ion-android-textsms"></i></span></div>
+
+
+<hr style="background-color: #f2f2f2 !important;margin-top: 0px;">
+</div>
+
+
+</ion-content>
+</ion-view>

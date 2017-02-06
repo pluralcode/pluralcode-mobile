@@ -3,6 +3,61 @@
     font-family: Roboto;
     src: url(/fonts/Roboto-Medium.ttf);
 }
+.profileavatar{
+  width: 100%;
+  background: #f7f7f7;
+  margin: 0 auto !important;
+  /*border-bottom: 2px solid #3c3c3c;*/
+
+}
+.mgspacer{
+  margin-top: 20px !important;
+}
+.profilecontent{
+  font-size: 16px;
+  color: #3c3c3c;
+}
+.proicon{
+color:white; background: #679dfd; padding:8px; padding-left:12px;padding-right:12px;border-radius:3px; font-size: 18px;margin-left:10px
+}
+.procontent{
+  color:#3c3c3c;font-size: 18px; font-weight: 700; margin-top: 3px;
+}
+.editn{  
+  margin-top: 20px;
+  padding: 8px;
+  background: #679dfd;
+  color: white;
+  width: 40%;
+  border-radius: 3px;
+  display: inline-block;
+}
+.editp{  
+  margin-top: 20px;
+  padding: 8px;
+  background: #679dfd;
+  color: white;
+  left: 90%;
+  position: absolute;
+  border-radius: 3px;
+  display: inline-block;
+}
+.editc{  
+  padding: 8px;
+  background: #679dfd;
+  color: white;
+  float:right;
+  border-radius: 3px;
+  display: inline-block;
+}
+.editcp{  
+  padding: 8px;
+  background: #679dfd;
+  color: white;
+  float:right;
+  border-radius: 3px;
+  display: inline-block;
+}
 
 .my_tile {
   width: 100% !important;
@@ -13,6 +68,38 @@
   color: black;
   font-weight: bold;
   text-decoration: bold;
+}
+.hmlabel{
+  position: absolute;
+    bottom: 0;
+    text-align: center;
+    left: 50%;
+}
+.relat{
+  position: relative;
+  left: -50%;
+}
+.tiler{
+  position: absolute;
+    width: 64px;
+    height: 64px;
+    font-size: 64px;
+    top: 50%;
+    margin-top: -40px;
+    left: 50%;
+    margin-left: -32px;
+    text-align: center;
+}
+
+.tiler2{
+  position: absolute;
+
+    top: 60%;
+    margin-top: -40px;
+    left:73%;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: right;
 }
 .hmbutton{
   min-width: 80% !important;
@@ -96,8 +183,8 @@ color: black;
 background: #d2d2d2 !important;
 margin-top: 5px;
 margin-bottom: 5px;
-border-top:2px solid #FCC930;
-border-bottom:2px solid #FCC930;}
+border-top:2px solid #3c3c3c;
+border-bottom:2px solid #3c3c3c;}
 .paneltile{
   color: black; 
   background: transparent !important;

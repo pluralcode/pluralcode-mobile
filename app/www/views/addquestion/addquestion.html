@@ -1,0 +1,35 @@
+<ion-view view-title="Post - Pluralcode" hide-back-button="false">
+
+
+
+ 
+<ion-content style="background: #f2f2f2">
+ <div class="item item-input" style="background: #679dfd;font-size: 30px; height:70px;color: white">
+              <span style="margin-left: 10px"> New Question</span>
+          </div>
+<br />
+
+
+<div class="card">
+   <div class="item item-avatar">
+      <img src="/images/user_avatar.jpeg" />
+      <h3 style="font-size: 2em">{{name}}</h3>
+   </div>
+
+   <div class="item item-body">
+
+          <label class="item item-input item-floating-label">
+            <input style="border-bottom: 1px solid #679dfd;font-size: 18px" type="text" placeholder="Question" name="question" ng-model="details.question" />
+            <br /><br />
+            
+            <textarea placeholder="Description" ng-model="details.description"></textarea>
+            <br />
+            <input style="border-bottom: 1px solid #679dfd;font-size: 18px" type="text" placeholder="tags" name="details.tags" />
+            <br />
+        </label>
+
+        <div style="background:#679dfd; padding: 10px; color: white; text-align: center;float: right; width: 30%;border-radius: 5px" ng-click="post()">POST</div>
+</div>
+
+</ion-content>
+</ion-view>

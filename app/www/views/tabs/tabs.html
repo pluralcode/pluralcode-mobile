@@ -1,15 +1,19 @@
 
 <ion-view view-title="PluralCode" hide-back-button="true">
 </ion-view>
-<ion-tabs class="tabs-icon-top tabs-positive tabs-custom">
-	<ion-tab title="Notifications" icon-on="ion-ios-chatboxes" icon-off="ion-ios-chatboxes-outline" ui-sref="tabs.notifications">
+<ion-tabs class="tabs-icon-top tabs-positive" style="background:#679dfd !important">
+	<ion-tab title="Community" icon-on="ion-ios-people" icon-off="ion-ios-people" ui-sref="tabs.notifications">
 		<ion-nav-view name="notifications-tab"></ion-nav-view>
 	</ion-tab>
-	<ion-tab title="Home" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" ui-sref="tabs.home" >
+	<ion-tab title="Home" icon-on="ion-home" icon-off="ion-home" ui-sref="tabs.home" >
 <ion-nav-view name="home-tab"></ion-nav-view>
 	</ion-tab>
-	<ion-tab title="Classrooms" icon-on="ion-ios-bookmarks" icon-off="ion-ios-bookmarks-outline" ui-sref="tabs.classrooms">
+	<ion-tab title="Classrooms" icon-on="ion-ios-bookmarks" icon-off="ion-ios-bookmarks" ui-sref="tabs.classrooms">
 		<ion-nav-view name="classrooms-tab"></ion-nav-view>
 	</ion-tab>
+<ion-tab title="Code" icon-on="ion-code" icon-off="ion-code" ui-sref="tabs.workspace">
+		<ion-nav-view name="code-tab"></ion-nav-view>
+	</ion-tab>
+	
 	
 </ion-tabs>

@@ -52,6 +52,15 @@
     <script src="views/signup/intermediate.js"></script>
 	  <script src="views/login/login.js"></script>
 	  <script src="views/tour/tour.js"></script>
+	  <script src="https://js.paystack.co/v1/inline.js"></script>
+	  <script src="views/buyrubbies/buyrubbies.js"></script>
+	  <script src="views/profile/profile.js"></script>
+	  <script src="views/community/community.js"></script>
+	  <script src="views/viewchapter/viewchapter.js"></script>
+	  <script src="views/enrol/enrol.js"></script>
+	  <script src="views/addquestion/addquestion.js"></script>
+	  <script src="views/qna/qna.js"></script>
+	    
     
     <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
     
@@ -60,74 +69,16 @@
 
   </head>
   <body ng-app="App">
-		  <ion-side-menus enable-menu-with-back-views="true" >
-			  <ion-side-menu-content drag-content="false">
-				  <ion-nav-bar class="bar-positive view_theme">
+		    <ion-nav-bar class="bar-positive view_theme">
 					  <ion-nav-back-button class="button-clear">
 						  <i class="ion-chevron-left"></i> Back
 					  </ion-nav-back-button>
-					  <ion-nav-buttons side="right">
-						  <button class="button button-clear" menu-toggle="right">
-							  <span class="icon ion-navicon"></span>
-						  </button>
-					  </ion-nav-buttons>
+					  
 				  </ion-nav-bar>
 				  <ion-nav-view>
 			
 				  </ion-nav-view>
-			  </ion-side-menu-content>
-			  <ion-side-menu side="right">
-				  <ion-header-bar class="bar-positive view_theme">
-					  <h1 class="title">Settings</h1>
-				  </ion-header-bar>
-				  <ion-content>
-					  <ion-list>
-						  <ion-item class="item parent">
-							  
-								  <img ng-src="images/user_avatar.jpeg" class="img-profile">
-							  
-						  </ion-item>
-						  <ion-item class="item-divider">
-							  Phone number
-						  </ion-item>
-						  <ion-item >
-							  <div class="item item-button-right">
-							  +2348141649864
-							 	 <button class="button button-small button-positive">
-									 Edit
-							  	</button>
-							 </div>
-						  </ion-item>
-						  <ion-item class="item-divider">
-							  Email
-						  </ion-item>
-						  <ion-item >
-							  <div class="item item-button-right">
-							  mail2oke@gmail.com
-							 	 <button class="button button-small button-positive">
-									 Edit
-							  	</button>
-							 </div>
-						  </ion-item>
-						  	
-						  <ion-item class="item-divider">
-							  Rubies
-							</ion-item>
-						  <ion-item >
-							  <div class="item item-button-right">
-							  100
-							 	 <button class="button button-small button-balanced">
-									 Buy
-							  	</button>
-							 </div>
-							  
-						  </ion-item>
-						  
-					</ion-list>
-				  </ion-content>
-			  </ion-side-menu>
-	  </ion-side-menus>
-	  
+			  
 	  
   </body>
 	

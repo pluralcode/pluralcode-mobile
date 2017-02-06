@@ -4,3 +4,4 @@ angular.module("App").controller("tourController", function ($scope, $state) {
 		$state.go("login");
 	};
 });
+
