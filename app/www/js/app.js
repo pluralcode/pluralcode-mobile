@@ -1,4 +1,4 @@
-angular.module('App', ['ionic', 'ngVideo'])
+angular.module('App', ['ionic', 'ngVideo', 'ngSanitize', 'ng-showdown'])
 
 .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 	$stateProvider
@@ -96,6 +96,16 @@ angular.module('App', ['ionic', 'ngVideo'])
 			'classrooms-tab': {
 				templateUrl: 'views/viewchapter/viewchapter.html',
 				controller: "ViewChapterController"
+			}
+			
+		}
+	})
+	.state('tabs.lesson_content', {
+		url: '/lesson_content/:lesson_id/:chapter_id',
+		views: {
+			'classrooms-tab': {
+				templateUrl: 'views/lesson_content/lesson_content.html',
+				controller: "LessonContentController"
 			}
 			
 		}

@@ -15,5 +15,7 @@ angular.module("App")
 			console.log("could not load lessons")
 	});
 	
-	
+	$scope.load_content = function(lesson_id, chapter_id) {
+		$state.go("tabs.lesson_content", {"lesson_id":lesson_id, "chapter_id":chapter_id});
+	};
 });

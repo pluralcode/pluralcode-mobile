@@ -1,0 +1,40 @@
+
+<ion-view view-title="Community - Pluralcode" hide-back-button="true">
+
+
+
+ 
+<ion-content style="background: #fafafa">
+ <div style="width: 95%; margin: 0 auto; margin-top: 15px">
+            <ion class="item item-thumbnail-left" ng-repeat="m in mentorlist" style=" border-radius: 5px; margin-bottom: 10px" ng-click="viewmentor(m)" >
+         
+             <img src="/images/achievements.jpeg"/> 
+             <div class="row">
+                   <div class="col col-90"> 
+                   
+                   
+                  <h2 style="text-transform: capitalize !important; font-size: 18px;font-weight: 600; color: #1b8796">
+                      {{m.surname}}
+                  </h2>
+                  <h5 style="text-transform: capitalize !important; font-size: 14px;font-weight: normal; margin-top: 5px;margin-bottom: 5px; color: grey" class="text-muted">
+                  @{{m.username}}
+                  </h5>
+
+                 <span style="padding: 5px; padding-top: 0.5px; padding-bottom: 0.5px; background: rgba(27, 135, 150, 0.8);border-radius: 2px; color: white;text-transform: capitalize !important; font-size: 15px;"> {{m.role}}</span>
+                  
+                 </div>
+                 <div class="col col-10">
+                 <br>
+
+                   <i class="icon ion-chevron-right" style="float: right;
+    margin-top: 5px;"></i>
+                 </div>
+           </div>
+          </ion>
+
+ </div>
+
+
+
+</ion-content>
+</ion-view>

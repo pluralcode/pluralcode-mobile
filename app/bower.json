@@ -6,6 +6,7 @@
     "platform.js": "platform#^1.3.2"
   },
   "dependencies": {
-    "ngCordova": "^0.1.27-alpha"
+    "ngCordova": "^0.1.27-alpha",
+    "ng-showdown": "^1.1.0"
   }
 }
