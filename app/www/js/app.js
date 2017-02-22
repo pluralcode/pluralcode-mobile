@@ -71,6 +71,15 @@ angular.module('App', ['ionic', 'ngVideo', 'ngSanitize', 'ng-showdown'])
 			}
 		}
 	})
+	.state('tabs.viewmentor', {
+		url: '/viewmentor',
+		views: {
+			'home-tab': {
+				templateUrl: 'views/viewmentor/viewmentor.html',
+			}
+			
+		}
+	})
 	.state('tabs.view_post', {
 		url: '/view_post/:post_id',
 		views: {
@@ -172,6 +181,11 @@ angular.module('App', ['ionic', 'ngVideo', 'ngSanitize', 'ng-showdown'])
 			
 		}
 	})
+	.state('savedcodes',{
+		url: '/savedcodes',
+		templateUrl: 'views/savedcodes/savedcodes.html'
+	})
+	
 	.state('tabs.achievements', {
 		url: '/achievements',
 		views: {
@@ -230,6 +244,7 @@ angular.module('App', ['ionic', 'ngVideo', 'ngSanitize', 'ng-showdown'])
 		}
 		
 	})
+	
 	.state('tabs.creditpaysuccess', {
 		url: '/paysuccess',
 		views: {

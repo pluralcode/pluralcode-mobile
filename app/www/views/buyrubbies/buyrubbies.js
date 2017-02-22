@@ -1,12 +1,13 @@
 
 angular.module("App")
-.controller("BuyRubbiesController", function ($scope, $state, Auth, $ionicLoading, $http ) {
+.controller("BuyRubbiesController", function ($scope, $state, Auth, $ionicLoading, $http, $ionicPopup ) {
 	$scope.email = Auth.getEmail();
 	$scope.password = Auth.getPassword();
 	$scope.balance = Auth.getBalance();
 	
 	$scope.details = [
-		{amount: ""}
+		{amount: ""},
+		{airtime_pin: ""}
 	];
 	var am = parseInt($scope.amount) * 1000;
 	
@@ -24,6 +25,22 @@ angular.module("App")
 				return;
 	});
 	$scope.buy_airtime = function () {
+		console.log($scope.details.airtime_pin);
+		//return;
+		$http.get("http://apis.pluralcode.com.ng/public/student/payment/airtime?" + $scope.email + "&password=" + $scope.password + "&airtime_pin=" + $scope.details.airtime_pin)
+			.success( function (data) {
+				var alertPopup = $ionicPopup.alert({
+					title: 'Success',
+					template: "PIN sent. Please wait a few moment for processing"
+				});
+			
+			})
+			.error( function (err) {
+				var alertPopup = $ionicPopup.alert({
+					title: 'Error',
+					template: "No Internet Connection"
+				});
+		});
 	};
 	$scope.buy_creditcard = function (){
 		
